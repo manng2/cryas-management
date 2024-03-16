@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@supabase/supabase-js>@supabase/gotrue-js': 2.61.0
+
 dependencies:
   '@angular/animations':
     specifier: ^17.0.0
@@ -73,9 +76,6 @@ devDependencies:
   karma-jasmine-html-reporter:
     specifier: ~2.1.0
     version: 2.1.0(jasmine-core@5.1.2)(karma-jasmine@5.1.0)(karma@6.4.3)
-  supabase-js:
-    specifier: link:@types/supabase/supabase-js
-    version: link:@types/supabase/supabase-js
   typescript:
     specifier: ~5.2.2
     version: 5.2.2
@@ -2469,8 +2469,8 @@ packages:
       '@supabase/node-fetch': 2.6.15
     dev: false
 
-  /@supabase/gotrue-js@2.62.2:
-    resolution: {integrity: sha512-AP6e6W9rQXFTEJ7sTTNYQrNf0LCcnt1hUW+RIgUK+Uh3jbWvcIST7wAlYyNZiMlS9+PYyymWQ+Ykz/rOYSO0+A==}
+  /@supabase/gotrue-js@2.61.0:
+    resolution: {integrity: sha512-kaSoSUXm5LV6z5as9vRughSfEHs9Ru66ZISrSDf7u+U2Viv56+sR2QhfaPLhhSsJh0y3GlpzNDUfapKgHwYv9A==}
     dependencies:
       '@supabase/node-fetch': 2.6.15
     dev: false
@@ -2510,7 +2510,7 @@ packages:
     resolution: {integrity: sha512-WpiawHjseIRcCQTZbMJtHUSOepz5+M9qE1jP9BDmg8X7ehALFwgEkiKyHAu59qm/pKP2ryyQXLtu2XZNRbUarw==}
     dependencies:
       '@supabase/functions-js': 2.1.5
-      '@supabase/gotrue-js': 2.62.2
+      '@supabase/gotrue-js': 2.61.0
       '@supabase/node-fetch': 2.6.15
       '@supabase/postgrest-js': 1.9.2
       '@supabase/realtime-js': 2.9.3
