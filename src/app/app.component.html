@@ -1,11 +1,31 @@
-<div class="body">
-  @if (!userData()) {
-    <div id="google-signin-button"></div>
-  } @else {
-    <h1>Hello {{userData()!.name}}</h1>
-    <img [src]="userData()!.avatar"/>
-  }
+@if (!userData()) {
+<div id="google-signin-button"></div>
+} @else {
+<h1>Hello</h1>
+<div class="avatar">
+  <nz-avatar [nzSrc]="userData()!.avatar" [nzSize]="48" />
+  <span>{{ userData()!.name }}</span>
+</div>
+}
+
+<div class="example-input">
+  <input
+    placeholder="input here"
+    nz-input
+    [formControl]="searchCoinSymbolFormControl"
+    [nzAutocomplete]="auto"
+  />
+  <nz-autocomplete #auto>
+    @for (option of coinPriceOptions(); track $index) {
+    <nz-auto-option [nzValue]="option.value" (click)="selectCoinPrice(option.label)">{{ option.label }}</nz-auto-option>
+    }
+  </nz-autocomplete>
 </div>
 
+<section class="coin-list">
+  @for (coinPrice of userCoinPrices(); track $index) {
+  <app-coin-price [symbol]="coinPrice.symbol" [price]="coinPrice.price" />
+  }
+</section>
 
 <router-outlet></router-outlet>
